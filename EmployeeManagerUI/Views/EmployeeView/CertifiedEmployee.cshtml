@@ -1,0 +1,28 @@
+﻿@model EmployeeManagerMVC.Models.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Certified Employees";
+}
+
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Project Name</th>
+                <th>Technology Stack</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var emp in @Model.CertifiedEmployees)
+            {
+                <tr>
+                    <td>@emp.Name</td>
+                    <td>@emp.ProjectName</td>
+                    <td>@emp.SkillSet</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,43 @@
+﻿@model EmployeeManagerMVC.Models.EmployeeViewModel
+
+@{
+    ViewData["Title"] = "Employee Need To Upgrade Skillset";
+}
+
+<div class="container">
+    <h2>Search Employee Need To Upgrade Skillset</h2>
+    <form asp-action="UpgradeSkillset" method="post">
+        <div class="form-group">
+            <label for="SkillSet">Skillset</label>
+            <input type="text" class="form-control" id="SkillSet" name="SkillSet" value="@Model.SkillSet" />
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+    @if (Model.UpgradeSkillset != null)
+    {
+        <h3>Results</h3>
+        <div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Project Name</th>
+                        <th>Technology Stack</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var emp in @Model.UpgradeSkillset)
+                    {
+                        <tr>
+                            <td>@emp.Name</td>
+                            <td>@emp.ProjectName</td>
+                            <td>@emp.SkillSet</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+

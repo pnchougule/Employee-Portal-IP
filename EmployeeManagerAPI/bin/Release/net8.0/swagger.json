@@ -1,0 +1,385 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "EmployeeManagerAPI",
+    "version": "v1"
+  },
+  "paths": {
+    "/api/Employees/total": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/getallemployees": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/engagedforclient/total": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/engagedforclient": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/onbench/total": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/onbench": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/onpip/total": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "format": "int32",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/onpip": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/matchingskillset/{skillSet}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "skillSet",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/upgradeskillset/{skill}": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "skill",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/certified": {
+      "get": {
+        "tags": [
+          "Employees"
+        ],
+        "produces": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Employee"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Employees/add": {
+      "post": {
+        "tags": [
+          "Employees"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Employees/update/{id}": {
+      "put": {
+        "tags": [
+          "Employees"
+        ],
+        "consumes": [
+          "application/json-patch+json",
+          "application/json",
+          "text/json",
+          "application/*+json"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "schema": {
+              "$ref": "#/definitions/Employee"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Employee": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "department": {
+          "type": "string"
+        },
+        "subDepartment": {
+          "type": "string"
+        },
+        "manager": {
+          "type": "string"
+        },
+        "projectName": {
+          "type": "string"
+        },
+        "engagedForClient": {
+          "type": "boolean"
+        },
+        "onBench": {
+          "type": "boolean"
+        },
+        "onPip": {
+          "type": "boolean"
+        },
+        "isBillable": {
+          "type": "boolean"
+        },
+        "skillSet": {
+          "type": "string"
+        },
+        "certification": {
+          "type": "string"
+        },
+        "experience": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "createdOn": {
+          "format": "date-time",
+          "type": "string"
+        },
+        "modifiedOn": {
+          "format": "date-time",
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
